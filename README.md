@@ -69,4 +69,23 @@ predictor = RealEstatePredictor(
     model_path='models/model.joblib',
     preprocessor_path='models/preprocessor.joblib'
 )
+data = {
+    'area': 7420,
+    'bedrooms': 4,
+    'bathrooms': 2,
+    'stories': 3,
+    'mainroad': 'yes',
+    'guestroom': 'no',
+    'basement': 'no',
+    'hotwaterheating': 'no',
+    'airconditioning': 'yes',
+    'parking': 2,
+    'prefarea': 'yes',
+    'furnishingstatus': 'furnished'
+}
+
+price = predictor.predict(data)
+print(f"Predicted Price: {price}")
+```
+
 

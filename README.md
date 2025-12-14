@@ -19,3 +19,54 @@ Real-Estate-Price-Prediction/
 └── README.md               # Project documentation
 ```
 
+## Dataset
+
+The project uses `Housing.csv` which contains the following features:
+- price (Target)
+- area
+- bedrooms
+- bathrooms
+- stories
+- mainroad
+- guestroom
+- basement
+- hotwaterheating
+- airconditioning
+- parking
+- prefarea
+- furnishingstatus
+
+## Setup
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Training the Model
+
+To train the model, evaluate it, and save the artifacts:
+
+```bash
+python main.py
+```
+
+This will create `models/model.joblib` and `models/preprocessor.joblib`.
+
+### Making Predictions
+
+You can use the `src/predict.py` script to make predictions programmatically.
+
+Example:
+
+```python
+from src.predict import RealEstatePredictor
+import os
+
+predictor = RealEstatePredictor(
+    model_path='models/model.joblib',
+    preprocessor_path='models/preprocessor.joblib'
+)
+
